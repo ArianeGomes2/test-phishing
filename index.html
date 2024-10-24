@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Comunicado Importante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+        .header-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 12px;
+            color: #666;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .alert-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 800px;
+            color: white;
+            text-align: center;
+        }
+        .warning-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        .alert-message {
+            background-color: rgba(255, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            animation: slideIn 1s ease-out;
+        }
+        .tips {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-5px, 5px); }
+            40% { transform: translate(-5px, -5px); }
+            60% { transform: translate(5px, 5px); }
+            80% { transform: translate(5px, -5px); }
+            100% { transform: translate(0); }
+        }
+        .glitch-text {
+            animation: glitch 0.5s infinite;
+            color: #ff0000;
+        }
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #ff0000;
+            transition: width 3s linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header-logo">
+            <img src="C:\Users\ariane.silva\Downloads\gophish-v0.12.1-windows-64bit\Logo SEAS 2023.png" alt="Logo SEAS 2023" />
+        </div>
+
+        <h2>Atualização Importante do Sistema</h2>
+        
+        <p>Prezado(a) colaborador(a),</p>
+
+        <p>Identificamos a necessidade de uma atualização urgente em seu acesso ao sistema. Para sua segurança, por favor, clique no botão abaixo para confirmar seus dados:</p>
+
+        <center>
+            <a class="button" onclick="iniciarSimulacao(); return false;">ATUALIZAR MEUS DADOS AGORA</a>
+        </center>
+
+        <div class="footer">
+            <p>Este é um e-mail automático. Por favor, não responda.</p>
+            <p>Departamento de Tecnologia da Informação</p>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay">
+        <button class="close-button" onclick="fecharAlerta()">✕</button>
+        <div class="alert-content">
+            <div class="warning-icon">⚠️</div>
+            <div id="hackingSimulation">
+                <h2 class="glitch-text">INICIANDO CAPTURA DE DADOS...</h2>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+                <p id="status">Coletando informações do sistema...</p>
+            </div>
+            <div id="alertMessage" class="alert-message" style="display: none;">
+                <h2>🚨 ALERTA DE SEGURANÇA! 🚨</h2>
+                <p>Você acaba de experienciar como um ataque de phishing pode acontecer!</p>
+                <p>Se isso fosse um ataque real, seus dados poderiam ter sido comprometidos.</p>
+            </div>
+            <div id="securityTips" class="tips">
+                <h3>Dicas de Segurança:</h3>
+                <ul style="text-align: left;">
+                    <li>Sempre verifique o remetente do e-mail</li>
+                    <li>Nunca clique em links suspeitos</li>
+                    <li>Desconfie de mensagens urgentes ou ameaçadoras</li>
+                    <li>Não forneça dados sensíveis por e-mail</li>
+                    <li>Em caso de dúvida, contate o departamento de TI</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function iniciarSimulacao() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('progress').style.width = '100%';
+            
+            // Mensagens que serão exibidas durante a "invasão"
+            const mensagens = [
+                "Iniciando captura de dados...",
+                "Acessando sistema...",
+                "Coletando informações pessoais...",
+                "Obtendo credenciais...",
+                "Download de dados em progresso..."
+            ];
+
+            let i = 0;
+            const statusElement = document.getElementById('status');
+            
+            const intervalo = setInterval(() => {
+                if (i < mensagens.length) {
+                    statusElement.textContent = mensagens[i];
+                    i++;
+                } else {
+                    clearInterval(intervalo);
+                    mostrarAlerta();
+                }
+            }, 1000);
+        }
+
+        function mostrarAlerta() {
+            document.getElementById('hackingSimulation').style.display = 'none';
+            document.getElementById('alertMessage').style.display = 'block';
+            document.getElementById('securityTips').style.display = 'block';
+        }
+
+        function fecharAlerta() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('hackingSimulation').style.display = 'block';
+            document.getElementById('alertMessage').style.display = 'none';
+            document.getElementById('securityTips').style.display = 'none';
+            document.getElementById('progress').style.width = '0%';
+        }
+    </script>
+</body>
+</html>
