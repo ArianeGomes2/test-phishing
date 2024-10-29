@@ -141,7 +141,7 @@
 <body>
     <div class="email-container">
         <div class="header-logo">
-            <img src="https://github.com/ArianeGomes2/test-phish/blob/main/logo.png?raw=true" alt="Logo SEAS 2023" style="width: 80%;"/>
+            <img src="C:\Users\ariane.silva\Downloads\gophish-v0.12.1-windows-64bit\logo.png" alt="Logo SEAS 2023" style="width: 80%;" />
         </div>
 
         <h2>Atualização Importante do Sistema</h2>
@@ -161,7 +161,6 @@
     </div>
 
     <div id="overlay" class="overlay">
-       <!-- <button class="close-button" onclick="fecharAlerta()">✕</button> -->
         <div class="alert-content">
             <div class="warning-icon">⚠️</div>
             <div id="hackingSimulation">
@@ -186,6 +185,10 @@
                     <li>Não forneça dados sensíveis por e-mail</li>
                     <li>Em caso de dúvida, contate o departamento de TI</li>
                 </ul>
+            </div>
+            <div id="alertMessage2" class="alert-message2" style="display: none;">
+                <h3> Para garantir a eficácia da campanha, pedimos que todos mantenham o processo confidencial. 
+                    Compartilhar informações sobre a campanha pode comprometer os resultados e dificultar nossa capacidade de identificar áreas onde precisamos melhorar.</h2>
             </div>
         </div>
     </div>
@@ -222,6 +225,7 @@
             document.getElementById('hackingSimulation').style.display = 'none';
             document.getElementById('alertMessage').style.display = 'block';
             document.getElementById('securityTips').style.display = 'block';
+            document.getElementById('alertMessage2').style.display = 'block';
         }
 
         function fecharAlerta() {
@@ -230,6 +234,7 @@
             document.getElementById('alertMessage').style.display = 'none';
             document.getElementById('securityTips').style.display = 'none';
             document.getElementById('progress').style.width = '0%';
+            document.getElementById('alertMessage2').style.display = 'none';
         }
     </script>
 </body>
